@@ -1,6 +1,6 @@
 # dfs-trait-tracker-tft
 
-A DFS algorithm for the game Teamfight Tactics, and specifically for one of the game's augments "Trait Tracker".
+A DFS algorithm for the game Teamfight Tactics, and specifically for one of the game's augments "Trait Tracker". It takes 2 .json files, one for the unit and their traits associated with them, and the other the number of unique units needed to activate the trait.
 
 I provided the .json files for Set 14's units ranging from 1 to 4 costed units, however I did not define their cost in this case. I will think about adding their cost for future cases where I want to do more. I also provided the trait list for this set, and the minimum requirement for each one to be active. All of this is was done manually.
 
