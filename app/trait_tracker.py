@@ -56,7 +56,7 @@ def dfs(current_group, current_trait_count, group_size=7, start=0):
         for t in unit["Traits"]:
             new_count[t] += 1
         current_group.append(unit)
-        dfs(i+1, current_group, new_count, group_size)
+        dfs(current_group, new_count, group_size, i+1)
         current_group.pop()
 
 group_size = 7  # adjust size if needed
