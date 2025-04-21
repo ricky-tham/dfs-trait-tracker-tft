@@ -1,5 +1,6 @@
 from collections import Counter, defaultdict
 import json
+import csv
 
 with open("import/set14_units.json") as f:
     units = json.load(f)
@@ -76,9 +77,16 @@ for sol in solutions:
     })
 
 json_filename = f"valid_groups_size_{group_size}.json"
+csv_filename = f"valid_groups_size_{group_size}.csv"
 
 with open(json_filename, "w") as jf:
     json.dump(formatted_results, jf, indent=4)
+
+with open(csv_filename, "w", newline='') as cf:
+    writer = csv.writer(cf)
+    writer.writerow(["Group ID", "Unit Names", "Active Traits", "Active Trait Count"])
+    for idx, res in enumerate(formatted_results, 1):
+        writer.writerow([idx, ", ".join(res["unit_names"]), ", ".join(res["active_traits"].keys()), res["active_count"]])
 
 # for idx, res in enumerate(formatted_results, 1):
 #     print(f"Group {idx}:")
